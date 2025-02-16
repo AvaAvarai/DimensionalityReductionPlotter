@@ -28,6 +28,12 @@ MNIST (784 attributes, 10 classes, 60,000 cases)
 
 ![MNIST Example](mnist_train_embeddings_20250215171912.png)
 
+TSNE 3D WBC 9 and 30 attributes:
+
+![WBC 9 attributes](wbc-diag-3d.png)
+
+![WBC 30 attributes](wbc-3d.png)
+
 ## License
 
 This project is freely available for both private and commerical use under the [MIT license](LICENSE).
