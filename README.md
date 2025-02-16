@@ -1,6 +1,6 @@
 # DimensionalityReductionPlotter
 
-Visualizing results of popular dimensionality reduction methods.
+Visualizing results of popular dimensionality reduction methods using two-dimensional projections.
 
 ## Examples
 
