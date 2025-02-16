@@ -8,6 +8,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 import umap
+import datetime
 
 # Function to open a file dialog and select CSV file
 def select_file():
@@ -58,7 +59,8 @@ def plot_embeddings(X, y):
         ax.legend(loc='best', bbox_to_anchor=(1, 1))
 
     plt.tight_layout()
-    plt.show()
+    filename = f"embeddings_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}.png"
+    plt.savefig(filename)
 
 # Main execution
 if __name__ == "__main__":
