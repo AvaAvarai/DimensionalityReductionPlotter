@@ -30,9 +30,9 @@ MNIST (784 attributes, 10 classes, 60,000 cases)
 
 TSNE 3D WBC 9 and 30 attributes:
 
-![WBC 9 attributes](wbc-diag-3d.png)
+![WBC 9 attributes](WBC-diag-3d.png)
 
-![WBC 30 attributes](wbc-3d.png)
+![WBC 30 attributes](WBC-3d.png)
 
 ## License
 
