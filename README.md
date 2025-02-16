@@ -24,6 +24,10 @@ MNIST 2v7 (784 attributes, 2 classes, 12,223 cases):
 
 ![MNIST 2v7 Example](mnist_2_7_embeddings_20250215170000.png)
 
+MNIST (784 attributes, 10 classes, 60,000 cases)
+
+![MNIST Example](mnist_train_embeddings_20250215171912.png)
+
 ## License
 
 This project is freely available for both private and commerical use under the [MIT license](LICENSE).
