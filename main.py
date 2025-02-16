@@ -9,6 +9,7 @@ from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 import umap
 import datetime
+from tqdm import tqdm
 
 # Function to open a file dialog and select CSV file
 def select_file():
@@ -40,15 +41,18 @@ def preprocess_data(file_path):
 # Function to compute embeddings and visualize them
 def plot_embeddings(X, y):
     # Compute embeddings
-    pca = PCA(n_components=2).fit_transform(X)
-    tsne = TSNE(n_components=2, random_state=42, n_jobs=1).fit_transform(X)
-    umap_embedding = umap.UMAP(n_components=2, random_state=42, n_jobs=1).fit_transform(X)
+    embeddings = {}
+    for method, func in tqdm({
+        'PCA': PCA(n_components=2),
+        't-SNE': TSNE(n_components=2, random_state=42),
+        'UMAP': umap.UMAP(n_components=2, random_state=42)
+    }.items(), desc="Computing embeddings"):
+        embeddings[method] = func.fit_transform(X)
 
     # Plot settings
     fig, axes = plt.subplots(1, 3, figsize=(18, 5))
-    methods = {'PCA': pca, 't-SNE': tsne, 'UMAP': umap_embedding}
 
-    for ax, (method, embedding) in zip(axes, methods.items()):
+    for ax, (method, embedding) in zip(axes, embeddings.items()):
         df_vis = pd.DataFrame(embedding, columns=['Dim 1', 'Dim 2'])
         df_vis['class'] = y
 
@@ -59,7 +63,8 @@ def plot_embeddings(X, y):
         ax.legend(loc='best', bbox_to_anchor=(1, 1))
 
     plt.tight_layout()
-    filename = f"embeddings_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}.png"
+    dataset_name = file_path.split('/')[-1].split('.')[0]
+    filename = f"{dataset_name}_embeddings_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}.png"
     plt.savefig(filename)
 
 # Main execution
