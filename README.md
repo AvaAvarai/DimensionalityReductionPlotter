@@ -20,6 +20,10 @@ Wisconsin Breast Cancer (30 attributes, 2 classes, 569 cases):
 
 ![Wisconsin Breast Cancer Example](breast-cancer-wisconsin_embeddings_20250215165142.png)
 
+MNIST 2v7 (784 attributes, 2 classes, 12,223 cases):
+
+![MNIST 2v7 Example](mnist_2_7_embeddings_20250215170000.png)
+
 ## License
 
 This project is freely available for both private and commerical use under the [MIT license](LICENSE).
