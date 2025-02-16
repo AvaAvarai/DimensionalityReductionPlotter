@@ -34,6 +34,10 @@ TSNE 3D WBC 9 and 30 attributes:
 
 ![WBC 30 attributes](WBC-3d.png)
 
+MNIST 3D TSNE:
+
+![MNIST 3D TSNE](mnist-3d.png)
+
 ## License
 
 This project is freely available for both private and commerical use under the [MIT license](LICENSE).
